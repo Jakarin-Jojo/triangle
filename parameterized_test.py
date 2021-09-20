@@ -46,8 +46,8 @@ class TriangleTest(unittest.TestCase):
                 self.assertFalse(is_triangle(a, b, c), msg)
 
     def test_invalid_argument_raises_exception(self):
-        for a, b, c in self.not_triangle:
+        for a, b, c in self.invalid_argument_raises_exception:
             with self.subTest():
-                msg = f'Arguments must be positive'
+                msg = f"side lengths ({a},{b},{c})"
                 with self.assertRaises(ValueError, msg=msg):
                     b = is_triangle(a, b, c)
